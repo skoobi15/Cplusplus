@@ -11,11 +11,11 @@ int main() {
 
     double result;
 
-    if (unit == 99 or unit == 67) {
+    if (unit == 99 || unit == 67) {
      result = (val * 9 / 5) + 32;
      cout << "Temperature in farenhite is " << result << "°F";}
 
-    else if (unit == 102 or unit == 70){
+    else if (unit == 102 || unit == 70){
      result = (val - 32)*5/9;
      cout << "Temperature in celsius is " << result << "°C";
     }

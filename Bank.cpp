@@ -3,19 +3,24 @@
 using namespace std;
 
 void showbalance(double balance) {
-    cout << "Your balance is $" << setprecision (2) << fixed << balance << '\n'; // the 2 in parentheis specifies the number of digits after decimal point
+    cout << "Your balance is $" << setprecision (2) << fixed << balance << '\n'; // the 2 in parenthesis specifies the number of digits after decimal point
 }
 
 double deposit () {
     double amount;
     cout << "Enter the amount you want to deposit: ";
     cin >> amount;
+
+    do { if (amount < 0) {
+        cout << "Invalid input \n";
+        }
+       } while (amount <=0);
     return amount; 
 }
 
-double widthdraw () {
+double withdraw () {
     double amount;
-    cout << "Enter the amount you want to widthdraw: ";
+    cout << "Enter the amount you want to withdraw: ";
     cin >> amount;
     return amount;
 }
@@ -31,7 +36,7 @@ int main() {
         cout << "Enter your choice \n"
          << "1. To show balance \n"
          << "2. To deposit money \n"
-         << "3. To widthdraw money \n"
+         << "3. To withdraw money \n"
          << "4. Exit \n";
 
         cin >> choice;
@@ -47,7 +52,7 @@ int main() {
                 break;
             case 3:
                  
-                 balance -= widthdraw ();
+                 balance -= withdraw ();
                  showbalance (balance);
                  break;
             case 4:
